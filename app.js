@@ -135,6 +135,188 @@
         });
     }
 
+    // ---------- Photo carousel + lightbox ----------
+    function initCarousel() {
+        var wrap = $('.carousel');
+        var lb = $('.lightbox');
+        if (!wrap || !lb) { return; }
+
+        var track   = $('.carousel-track', wrap);
+        var dotsBox = $('.carousel-dots', wrap);
+        var counter = $('.carousel-counter', wrap);
+        var lbImg   = $('.lightbox-img', lb);
+        var lbCount = $('.lightbox-counter', lb);
+
+        var EXT = ['jpg', 'jpeg', 'webp', 'png'];
+        var BASE = 'carousel/';
+        var MAX = 60, MISS_STOP = 3, DELAY = 4000;
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var srcs = [], cur = 0, lbOpen = false, lastFocus = null, timer = null;
+
+        function pad(n) { return (n < 10 ? '0' : '') + n; }
+        function label(i) { return 'Φωτογραφία / Photo ' + (i + 1); }
+
+        // Try candidate filenames in order; cb(name|null) with the first that loads.
+        function tryNames(cands, k, cb) {
+            if (k >= cands.length) { return cb(null); }
+            var im = new Image();
+            im.onload  = function () { cb(cands[k]); };
+            im.onerror = function () { tryNames(cands, k + 1, cb); };
+            im.src = BASE + cands[k];
+        }
+
+        // Sequentially detect carousel/01.*, 02.* … preserving order; stop after MISS_STOP gaps.
+        function probe(i, miss) {
+            if (i > MAX) { return finish(); }
+            var cands = [];
+            EXT.forEach(function (e) { cands.push(pad(i) + '.' + e); });
+            if (i < 10) { EXT.forEach(function (e) { cands.push(i + '.' + e); }); }
+            tryNames(cands, 0, function (name) {
+                if (name) { srcs.push(BASE + name); return probe(i + 1, 0); }
+                if (miss + 1 >= MISS_STOP) { return finish(); }
+                probe(i + 1, miss + 1);
+            });
+        }
+
+        function finish() {
+            if (!srcs.length) { return; }            // no images found → carousel stays hidden
+            build();
+            wrap.hidden = false;
+            if (srcs.length === 1) { wrap.classList.add('is-single'); }
+            requestAnimationFrame(function () { wrap.classList.add('is-visible'); });
+        }
+
+        function build() {
+            var slidesHtml = '', dotsHtml = '';
+            srcs.forEach(function (src, idx) {
+                slidesHtml += '<li class="carousel-slide"><img src="' + src + '" alt="' + label(idx) +
+                    '" loading="' + (idx === 0 ? 'eager' : 'lazy') + '" decoding="async"></li>';
+                dotsHtml += '<button class="carousel-dot" type="button" data-idx="' + idx +
+                    '" aria-label="' + label(idx) + '"></button>';
+            });
+            track.innerHTML = slidesHtml;
+            dotsBox.innerHTML = dotsHtml;
+
+            $$('.carousel-slide img', track).forEach(function (im, idx) {
+                im.addEventListener('click', function () { openLightbox(idx); });
+            });
+            $$('.carousel-dot', dotsBox).forEach(function (btn) {
+                btn.addEventListener('click', function () { go(parseInt(btn.getAttribute('data-idx'), 10)); restartAuto(); });
+            });
+            $('.carousel-prev', wrap).addEventListener('click', function () { go(cur - 1); restartAuto(); });
+            $('.carousel-next', wrap).addEventListener('click', function () { go(cur + 1); restartAuto(); });
+            $('.carousel-expand', wrap).addEventListener('click', function () { openLightbox(cur); });
+
+            var vp = $('.carousel-viewport', wrap);
+            addSwipe(vp);
+            addSwipe(lb);
+            vp.addEventListener('mouseenter', stopAuto);
+            vp.addEventListener('mouseleave', startAuto);
+
+            go(0);
+            startAuto();
+        }
+
+        function go(n) {
+            if (!srcs.length) { return; }
+            cur = (n % srcs.length + srcs.length) % srcs.length;
+            track.style.transform = 'translateX(' + (-cur * 100) + '%)';
+            if (counter) { counter.textContent = (cur + 1) + ' / ' + srcs.length; }
+            $$('.carousel-dot', dotsBox).forEach(function (btn, idx) {
+                var on = idx === cur;
+                btn.classList.toggle('is-active', on);
+                if (on) { btn.setAttribute('aria-current', 'true'); } else { btn.removeAttribute('aria-current'); }
+            });
+            if (lbOpen) { syncLightbox(); }
+        }
+
+        // Autoplay (4s) — paused on hover, while the lightbox is open, and under reduced-motion.
+        function startAuto() {
+            if (reduce || lbOpen || srcs.length < 2) { return; }
+            stopAuto();
+            timer = setInterval(function () { if (!lbOpen) { go(cur + 1); } }, DELAY);
+        }
+        function stopAuto() { if (timer) { clearInterval(timer); timer = null; } }
+        function restartAuto() { stopAuto(); startAuto(); }
+
+        function syncLightbox() {
+            lbImg.src = srcs[cur];
+            lbImg.alt = label(cur);
+            if (lbCount) { lbCount.textContent = (cur + 1) + ' / ' + srcs.length; }
+        }
+
+        function openLightbox(n) {
+            lbOpen = true;
+            lastFocus = document.activeElement;
+            stopAuto();
+            go(n);
+            lb.hidden = false;
+            document.body.style.overflow = 'hidden';
+            var c = $('.lightbox-close', lb);
+            if (c) { c.focus(); }
+        }
+
+        function closeLightbox() {
+            lbOpen = false;
+            lb.hidden = true;
+            document.body.style.overflow = '';
+            if (lastFocus && lastFocus.focus) { lastFocus.focus(); }
+            startAuto();
+        }
+
+        $('.lightbox-prev', lb).addEventListener('click', function () { go(cur - 1); });
+        $('.lightbox-next', lb).addEventListener('click', function () { go(cur + 1); });
+        $('.lightbox-close', lb).addEventListener('click', closeLightbox);
+        lb.addEventListener('click', function (e) { if (e.target === lb) { closeLightbox(); } });
+
+        document.addEventListener('keydown', function (e) {
+            if (!lbOpen) { return; }
+            if (e.key === 'Escape') { closeLightbox(); }
+            else if (e.key === 'ArrowLeft') { go(cur - 1); }
+            else if (e.key === 'ArrowRight') { go(cur + 1); }
+            else if (e.key === 'Tab') {
+                var f = $$('button', lb);
+                if (!f.length) { return; }
+                var first = f[0], last = f[f.length - 1];
+                if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+                else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+            }
+        });
+
+        function addSwipe(el) {
+            if (!el || !('onpointerdown' in el)) { return; }
+            var x0 = null;
+            el.addEventListener('pointerdown', function (e) { x0 = e.clientX; });
+            el.addEventListener('pointerup', function (e) {
+                if (x0 === null) { return; }
+                var dx = e.clientX - x0; x0 = null;
+                if (Math.abs(dx) > 40) { go(cur + (dx < 0 ? 1 : -1)); restartAuto(); }
+            });
+            el.addEventListener('pointercancel', function () { x0 = null; });
+        }
+
+        probe(1, 0);
+    }
+
+    // ---------- Testimonials ticker (seamless marquee) ----------
+    function initTicker() {
+        var ticker = $('.ticker');
+        if (!ticker) { return; }
+        var track = $('.ticker-track', ticker);
+        if (!track) { return; }
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { return; }
+
+        var setWidth = track.scrollWidth;            // width of the authored set, before duplicating
+        $$('.ticker-item', track).forEach(function (it) {
+            var clone = it.cloneNode(true);
+            clone.setAttribute('aria-hidden', 'true');
+            track.appendChild(clone);                // duplicate → translateX(-50%) loops seamlessly
+        });
+        var SPEED = 40;                              // px/sec — gentle, and constant no matter how many comments
+        track.style.setProperty('--ticker-dur', Math.max(20, Math.round(setWidth / SPEED)) + 's');
+        track.classList.add('is-running');
+    }
+
     // ---------- Year ----------
     function initYear() {
         var y = $('#year');
@@ -146,6 +328,8 @@
         initNav();
         initReveal();
         initContactForm();
+        initCarousel();
+        initTicker();
         initYear();
     }
 

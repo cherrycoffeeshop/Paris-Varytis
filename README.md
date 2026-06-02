@@ -20,6 +20,8 @@ Open the project and search (grep) for `{{` — every spot the client must compl
 | `{{INSTAGRAM}}` | `index.html` (hero socials) | Paris's own Instagram URL — or delete the link |
 | `{{LINKEDIN}}` | `index.html` (hero socials) | Paris's own LinkedIn URL — or delete the link |
 | `{{DOMAIN}}` | `index.html` `<meta property="og:image">` comment | Final domain, to make the social-share image an absolute URL (optional) |
+| `{{SCHOLARSHIP_1}}`–`{{SCHOLARSHIP_3}}` | `index.html` (Scholarships card) | Name of each scholarship / institution / award a student won (rows are duplicatable — add or remove `<div>`s) |
+| `{{SCHOLARSHIP_1_DETAIL}}`–`{{SCHOLARSHIP_3_DETAIL}}` | `index.html` (Scholarships card) | Short detail per scholarship — e.g. student initials, year, field, university |
 
 Quick find on macOS/Linux:
 
@@ -64,13 +66,14 @@ domain, add it under Settings → Pages (a `CNAME` file is created for you — n
 ## What's inside
 
 ```
-index.html              One page: Hero · About · Lessons · Philosophy · Credentials · Abakas · Contact
+index.html              One page: Hero · About · Lessons · Philosophy · Credentials · Abakas · Scholarships · Contact
 styles.css              "Slate Teal" academic design system (CSS variables)
 app.js                  Language toggle, mobile nav, active-link on scroll, scroll-reveal, contact→mailto
 favicon.svg             "PV" monogram (primary icon)
 favicon.ico             Raster fallback (16/32/48)
 apple-touch-icon.png    iOS home-screen icon (180×180)
 imges/                  Photos (hero, teaching, students) — already optimized; two are .webp
+carousel/               Gallery photos for the Contact-section carousel (01.webp, 02.jpeg, …)
 Varytis-CVblack.pdf     Linked by the "Download CV" buttons
 ```
 
@@ -91,6 +94,17 @@ Varytis-CVblack.pdf     Linked by the "Download CV" buttons
   serif/sans if you ever need a fully offline build.
 - **Images:** the hero is `imges/pro-vis54TW7.jpeg` (Paris at the whiteboard). All `<img>` tags carry
   intrinsic `width`/`height` to prevent layout shift; non-hero images are lazy-loaded.
+- **Carousel (Contact section):** photos live in the `carousel/` folder named `01`, `02`, `03`… —
+  the number sets the display order; supported formats are `.jpg`, `.jpeg`, `.png`, `.webp`. They're
+  detected automatically when the page loads, so to **add** a photo drop in the next number and to
+  **remove** one delete its file — **no code edits**. Keep the numbering sequential (a run of 3+
+  missing numbers stops detection). Each photo opens **fullscreen** (click it, or the ⤢ button); in
+  fullscreen, **← / →** keys navigate and **Esc** closes; the carousel also auto-advances every 4 s (pausing on hover and while fullscreen is open). Works both from `file://` and GitHub Pages.
+- **Student comments (testimonials):** the scrolling line under the gallery is built from
+  `<li class="ticker-item">` blocks in the **Testimonials** `<section>` of `index.html` — currently
+  **placeholder** reviews to replace. Each is bilingual (`.lang-el` / `.lang-en`); add or remove items
+  freely and the line is cloned automatically for a seamless loop (steady ~40 px/s, pauses on hover,
+  static under the OS "reduce motion" setting).
 
 ### Accessibility
 

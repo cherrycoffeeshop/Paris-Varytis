@@ -64,6 +64,7 @@
                 <li><a class="nav-link" href="#philosophy"><span class="lang-el">Φιλοσοφία</span><span class="lang-en">Philosophy</span></a></li>
                 <li><a class="nav-link" href="#credentials"><span class="lang-el">Προσόντα</span><span class="lang-en">Credentials</span></a></li>
                 <li><a class="nav-link" href="#abakas">Άβακας</a></li>
+                <li><a class="nav-link" href="#scholarships"><span class="lang-el">Υποτροφίες</span><span class="lang-en">Scholarships</span></a></li>
                 <li><a class="nav-link" href="#contact"><span class="lang-el">Επικοινωνία</span><span class="lang-en">Contact</span></a></li>
                 <li class="nav-lang-li">
                     <button class="lang-toggle" type="button" aria-label="Αλλαγή γλώσσας / Change language">
@@ -416,12 +417,56 @@
             </div>
         </section>
 
+        <!-- ============ SCHOLARSHIPS ============ -->
+        <section id="scholarships" class="section section-scholarships" aria-labelledby="scholarships-title">
+            <div class="container scholarships-grid">
+                <div class="scholarships-text">
+                    <header class="section-head" data-reveal>
+                        <span class="section-index">§ 06</span>
+                        <h2 id="scholarships-title" class="section-title">
+                            <span class="lang-el">Μαθητές μου που κέρδισαν υποτροφίες</span><span class="lang-en">Students of mine who won scholarships</span>
+                        </h2>
+                        <span class="section-rule" aria-hidden="true"></span>
+                    </header>
+                    <div class="prose" data-reveal>
+                        <p>
+                            <span class="lang-el">Η ουσιαστική προετοιμασία δεν αποδίδει μόνο στις εξετάσεις — ανοίγει πόρτες. Μέσα από μεθοδική δουλειά στη φυσική και τα μαθηματικά και προσωπική καθοδήγηση, μαθητές μου έχουν διακριθεί και έχουν κερδίσει υποτροφίες. Δίπλα σε κάθε μαθητή χτίζουμε τη μεθοδολογία, τη στρατηγική και την αυτοπεποίθηση που χρειάζονται για να ξεχωρίσουν.</span><span class="lang-en">Real preparation doesn't only pay off in exams — it opens doors. Through methodical work in physics and mathematics and close personal mentoring, students of mine have stood out and earned scholarships. With each student we build the method, the strategy and the confidence they need to excel.</span>
+                        </p>
+                    </div>
+                    <div class="scholarships-actions" data-reveal>
+                        <a href="#contact" class="btn btn-secondary btn-sm">
+                            <span class="lang-el">Μίλα μου για την προετοιμασία</span><span class="lang-en">Ask me about preparation</span>
+                        </a>
+                    </div>
+                </div>
+
+                <aside class="scholarships-card" data-reveal>
+                    <p class="scholarships-affil"><span class="lang-el">Διακρίσεις μαθητών</span><span class="lang-en">Student achievements</span></p>
+                    <h3 class="scholarships-name"><span class="lang-el">Υποτροφίες &amp; διακρίσεις</span><span class="lang-en">Scholarships &amp; distinctions</span></h3>
+                    <dl class="scholarships-dl">
+                        <div>
+                            <dt>{{SCHOLARSHIP_1}}</dt>
+                            <dd>{{SCHOLARSHIP_1_DETAIL}}</dd>
+                        </div>
+                        <div>
+                            <dt>{{SCHOLARSHIP_2}}</dt>
+                            <dd>{{SCHOLARSHIP_2_DETAIL}}</dd>
+                        </div>
+                        <div>
+                            <dt>{{SCHOLARSHIP_3}}</dt>
+                            <dd>{{SCHOLARSHIP_3_DETAIL}}</dd>
+                        </div>
+                    </dl>
+                </aside>
+            </div>
+        </section>
+
         <!-- ============ CONTACT ============ -->
         <section id="contact" class="section section-contact" aria-labelledby="contact-title">
             <div class="container contact-grid">
                 <div class="contact-intro">
                     <header class="section-head" data-reveal>
-                        <span class="section-index">§ 06</span>
+                        <span class="section-index">§ 07</span>
                         <h2 id="contact-title" class="section-title">
                             <span class="lang-el">Επικοινωνία</span><span class="lang-en">Get in touch</span>
                         </h2>
@@ -474,13 +519,87 @@
                 </form>
             </div>
 
-            <figure class="proof-strip container" data-reveal>
-                <img src="imges/pro-Wlp2jafN.webp" width="1080" height="1920" loading="lazy" decoding="async"
-                     alt="Ο Πάρης Βαρύτης με δύο μαθητές του, χαμογελαστοί έξω από καφετέρια.">
-                <figcaption>
-                    <span class="lang-el">Με μαθητές μου.</span><span class="lang-en">With some of my students.</span>
-                </figcaption>
-            </figure>
+            <!-- ============ TESTIMONIALS (placeholder student comments) ============ -->
+            <section class="testimonials" aria-label="Σχόλια μαθητών / Student comments">
+                <p class="eyebrow testimonials-eyebrow" data-reveal>
+                    <span class="lang-el">Τι λένε οι μαθητές μου</span><span class="lang-en">What my students say</span>
+                </p>
+                <!-- PLACEHOLDER reviews — replace with real ones. Add/remove <li class="ticker-item"> blocks freely; JS clones the line for a seamless loop. -->
+                <div class="ticker">
+                    <ul class="ticker-track" role="list">
+                        <li class="ticker-item">
+                            <blockquote><span class="lang-el">«Ο κ. Βαρύτης έκανε τη φυσική να μου φαίνεται εύκολη — για πρώτη φορά κατάλαβα τι λύνω.»</span><span class="lang-en">“Mr. Varytis made physics feel easy — for the first time I understood what I was actually solving.”</span></blockquote>
+                            <cite><span class="lang-el">— Μαρία Κ., Γ′ Λυκείου</span><span class="lang-en">— Maria K., final year</span></cite>
+                        </li>
+                        <li class="ticker-item">
+                            <blockquote><span class="lang-el">«Από 12 ανέβηκα στο 18 στα μαθηματικά μέσα σε έναν χρόνο.»</span><span class="lang-en">“I went from 12 to 18 in maths within a single year.”</span></blockquote>
+                            <cite><span class="lang-el">— Γιώργος Π.</span><span class="lang-en">— Giorgos P.</span></cite>
+                        </li>
+                        <li class="ticker-item">
+                            <blockquote><span class="lang-el">«Εξηγεί με υπομονή μέχρι να το καταλάβεις πραγματικά.»</span><span class="lang-en">“He explains with patience until you truly understand.”</span></blockquote>
+                            <cite><span class="lang-el">— Ελένη Μ.</span><span class="lang-en">— Eleni M.</span></cite>
+                        </li>
+                        <li class="ticker-item">
+                            <blockquote><span class="lang-el">«Με βοήθησε να περάσω στη σχολή που ονειρευόμουν.»</span><span class="lang-en">“He helped me get into the university I had been dreaming of.”</span></blockquote>
+                            <cite><span class="lang-el">— Νίκος Α.</span><span class="lang-en">— Nikos A.</span></cite>
+                        </li>
+                        <li class="ticker-item">
+                            <blockquote><span class="lang-el">«Οι μέθοδοί του με έκαναν να αγαπήσω τη φυσική.»</span><span class="lang-en">“His methods made me fall in love with physics.”</span></blockquote>
+                            <cite><span class="lang-el">— Δήμητρα Λ.</span><span class="lang-en">— Dimitra L.</span></cite>
+                        </li>
+                        <li class="ticker-item">
+                            <blockquote><span class="lang-el">«Πάντα οργανωμένος, πάντα ξεκάθαρος στις εξηγήσεις του.»</span><span class="lang-en">“Always organized, always crystal-clear in his explanations.”</span></blockquote>
+                            <cite><span class="lang-el">— Στέφανος Ρ.</span><span class="lang-en">— Stefanos R.</span></cite>
+                        </li>
+                        <li class="ticker-item">
+                            <blockquote><span class="lang-el">«Χάρη στα μαθήματά του πήγα με αυτοπεποίθηση στις Πανελλαδικές.»</span><span class="lang-en">“Thanks to his lessons I walked into the national exams with confidence.”</span></blockquote>
+                            <cite><span class="lang-el">— Αναστασία Β.</span><span class="lang-en">— Anastasia V.</span></cite>
+                        </li>
+                        <li class="ticker-item">
+                            <blockquote><span class="lang-el">«Δύσκολες έννοιες γίνονται απλές όταν τις εξηγεί εκείνος.»</span><span class="lang-en">“Difficult concepts become simple when he explains them.”</span></blockquote>
+                            <cite><span class="lang-el">— Κωνσταντίνος Θ.</span><span class="lang-en">— Konstantinos T.</span></cite>
+                        </li>
+                        <li class="ticker-item">
+                            <blockquote><span class="lang-el">«Ο καλύτερος καθηγητής που είχα ποτέ.»</span><span class="lang-en">“The best teacher I have ever had.”</span></blockquote>
+                            <cite><span class="lang-el">— Σοφία Γ., φοιτήτρια</span><span class="lang-en">— Sofia G., university student</span></cite>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="carousel container" data-reveal aria-roledescription="carousel" aria-label="Φωτογραφίες με μαθητές / Photos with students" hidden>
+                <div class="carousel-viewport">
+                    <ul class="carousel-track" role="list"></ul>
+                    <button class="carousel-arrow carousel-prev" type="button" aria-label="Προηγούμενη φωτογραφία / Previous photo">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+                    </button>
+                    <button class="carousel-arrow carousel-next" type="button" aria-label="Επόμενη φωτογραφία / Next photo">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                    </button>
+                    <button class="carousel-expand" type="button" aria-label="Άνοιγμα σε πλήρη οθόνη / Open fullscreen">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                    </button>
+                    <span class="carousel-counter" aria-hidden="true"></span>
+                </div>
+                <div class="carousel-dots" role="group" aria-label="Επιλογή φωτογραφίας / Choose photo"></div>
+                <p class="carousel-caption">
+                    <span class="lang-el">Στιγμές από τα μαθήματα και τους μαθητές μου.</span><span class="lang-en">Moments from my lessons and students.</span>
+                </p>
+            </div>
+
+            <div class="lightbox" role="dialog" aria-modal="true" aria-label="Προβολή φωτογραφίας / Photo viewer" hidden>
+                <button class="lightbox-close" type="button" aria-label="Κλείσιμο / Close">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+                <button class="lightbox-arrow lightbox-prev" type="button" aria-label="Προηγούμενη φωτογραφία / Previous photo">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <img class="lightbox-img" alt="">
+                <button class="lightbox-arrow lightbox-next" type="button" aria-label="Επόμενη φωτογραφία / Next photo">
+                    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+                <span class="lightbox-counter" aria-hidden="true"></span>
+            </div>
         </section>
     </main>
 
