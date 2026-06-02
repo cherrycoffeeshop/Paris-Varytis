@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Paris Varytis — PV monogram">
+  <rect width="64" height="64" rx="14" fill="#1F5A5E"/>
+  <rect x="4.75" y="4.75" width="54.5" height="54.5" rx="10" fill="none" stroke="#F4F4F1" stroke-opacity="0.30" stroke-width="1.5"/>
+  <text x="32" y="34" text-anchor="middle" dominant-baseline="central"
+        font-family="'GFS Didot', Georgia, 'Times New Roman', 'Noto Serif', serif"
+        font-size="33" font-weight="400" letter-spacing="1" fill="#F4F4F1">PV</text>
+  <line x1="22" y1="47" x2="42" y2="47" stroke="#F4F4F1" stroke-opacity="0.55" stroke-width="1.4" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="el" data-lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Πάρης Βαρύτης — Διδάκτωρ Θεωρητικής Φυσικής. Ιδιαίτερα μαθήματα Φυσικής & Μαθηματικών για Λύκειο, Πανελλαδικές και φοιτητές, online & δια ζώσης. Paris Varytis, PhD in Theoretical Physics.">
+    <meta name="theme-color" content="#1F5A5E">
+
+    <!-- Set JS flag + stored language before paint (avoids FOUC / language flash) -->
+    <script>
+        (function () {
+            var d = document.documentElement;
+            d.classList.add('js');
+            try {
+                if (localStorage.getItem('pv_lang') === 'en') {
+                    d.setAttribute('data-lang', 'en');
+                    d.setAttribute('lang', 'en');
+                }
+            } catch (e) {}
+        })();
+    </script>
+
+    <title>Πάρης Βαρύτης — Διδάκτωρ Θεωρητικής Φυσικής | Paris Varytis, PhD</title>
+
+    <!-- Open Graph (replace {{DOMAIN}} for absolute image URL) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Πάρης Βαρύτης — Διδάκτωρ Θεωρητικής Φυσικής">
+    <meta property="og:description" content="Ιδιαίτερα μαθήματα Φυσικής & Μαθηματικών με βάθος και μέθοδο — Λύκειο, Πανελλαδικές, Πανεπιστήμιο.">
+    <meta property="og:image" content="imges/pro-vis54TW7.jpeg">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- Fonts: GFS Didot (Greek-native academic Didone) + IBM Plex Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="#main" class="skip-link">
+        <span class="lang-el">Μετάβαση στο περιεχόμενο</span><span class="lang-en">Skip to main content</span>
+    </a>
+
+    <!-- ============ NAV ============ -->
+    <nav class="navbar" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="#hero" class="brand" aria-label="Paris Varytis — home">
+                <span class="brand-mark" aria-hidden="true">PV</span>
+                <span class="brand-name">
+                    <span class="lang-el">Πάρης Βαρύτης</span><span class="lang-en">Paris Varytis</span>
+                </span>
+            </a>
+
+            <button class="nav-toggle" aria-label="Άνοιγμα μενού / Open menu" aria-expanded="false" aria-controls="nav-links">
+                <span class="hamburger" aria-hidden="true"></span>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a class="nav-link" href="#about"><span class="lang-el">Σχετικά</span><span class="lang-en">About</span></a></li>
+                <li><a class="nav-link" href="#services"><span class="lang-el">Διδασκαλία</span><span class="lang-en">Teaching</span></a></li>
+                <li><a class="nav-link" href="#philosophy"><span class="lang-el">Φιλοσοφία</span><span class="lang-en">Philosophy</span></a></li>
+                <li><a class="nav-link" href="#credentials"><span class="lang-el">Προσόντα</span><span class="lang-en">Credentials</span></a></li>
+                <li><a class="nav-link" href="#abakas">Άβακας</a></li>
+                <li><a class="nav-link" href="#contact"><span class="lang-el">Επικοινωνία</span><span class="lang-en">Contact</span></a></li>
+                <li class="nav-lang-li">
+                    <button class="lang-toggle" type="button" aria-label="Αλλαγή γλώσσας / Change language">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+                        <span class="lang-el">EN</span><span class="lang-en">ΕΛ</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main">
+        <!-- ============ HERO ============ -->
+        <section id="hero" class="hero" aria-labelledby="hero-name">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <p class="eyebrow" data-reveal>
+                        <span class="lang-el">Φυσικός · Ερευνητής · Εκπαιδευτικός</span><span class="lang-en">Physicist · Researcher · Educator</span>
+                    </p>
+                    <h1 id="hero-name" class="hero-name" data-reveal>
+                        <span class="lang-el">Πάρης Βαρύτης</span><span class="lang-en">Paris Varytis</span>
+                    </h1>
+                    <p class="hero-role" data-reveal>
+                        <span class="lang-el">Διδάκτωρ Θεωρητικής Φυσικής</span><span class="lang-en">PhD in Theoretical Physics</span>
+                    </p>
+                    <p class="hero-tagline" data-reveal>
+                        <span class="lang-el">«Φυσική &amp; Μαθηματικά με βάθος και μέθοδο.»</span><span class="lang-en">“Physics &amp; Mathematics, taught with depth and method.”</span>
+                    </p>
+                    <p class="hero-lead" data-reveal>
+                        <span class="lang-el">Είμαι θεωρητικός φυσικός και εκπαιδευτικός. Ολοκλήρωσα το διδακτορικό μου στο Humboldt University of Berlin, εργάστηκα ως ερευνητής στο Max Born Institute και έχω δημοσιεύσει σε διεθνή επιστημονικά περιοδικά. Σήμερα διδάσκω φυσική και μαθηματικά, στην Αθήνα και online.</span><span class="lang-en">I'm a theoretical physicist and educator. I earned my doctorate at the Humboldt University of Berlin, worked as a researcher at the Max Born Institute, and have published in international scientific journals. Today I teach physics and mathematics, in Athens and online.</span>
+                    </p>
+                    <ul class="hero-facts" data-reveal>
+                        <li>Humboldt University of Berlin</li>
+                        <li>Max Born Institute</li>
+                        <li><span class="lang-el">10 δημοσιεύσεις</span><span class="lang-en">10 publications</span></li>
+                        <li><span class="lang-el">~10 χρόνια διδασκαλίας</span><span class="lang-en">~10 years teaching</span></li>
+                    </ul>
+                    <div class="hero-actions" data-reveal>
+                        <a href="Varytis-CVblack.pdf" download class="btn btn-primary">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            <span class="lang-el">Κατέβασε το βιογραφικό</span><span class="lang-en">Download CV</span>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <span class="lang-el">Επικοινωνία</span><span class="lang-en">Get in touch</span>
+                        </a>
+                    </div>
+                    <div class="hero-socials" data-reveal aria-label="Social links">
+                        <a class="social-link" href="mailto:{{EMAIL}}" aria-label="Email">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
+                        </a>
+                        <a class="social-link" href="{{INSTAGRAM}}" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+                        </a>
+                        <a class="social-link" href="{{LINKEDIN}}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 5a2 2 0 1 1-4-.02 2 2 0 0 1 4 .02zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <figure class="hero-figure" data-reveal>
+                    <div class="hero-figure-frame">
+                        <img src="imges/pro-vis54TW7.jpeg" width="1118" height="838"
+                             fetchpriority="high" decoding="async"
+                             alt="Πάρης Βαρύτης, Διδάκτωρ Θεωρητικής Φυσικής, μπροστά σε πίνακα.">
+                    </div>
+                </figure>
+            </div>
+        </section>
+
+        <!-- ============ ABOUT ============ -->
+        <section id="about" class="section section-about" aria-labelledby="about-title">
+            <div class="container">
+                <header class="section-head" data-reveal>
+                    <span class="section-index">§ 01</span>
+                    <h2 id="about-title" class="section-title">
+                        <span class="lang-el">Σχετικά με εμένα</span><span class="lang-en">About me</span>
+                    </h2>
+                    <span class="section-rule" aria-hidden="true"></span>
+                </header>
+
+                <div class="about-grid">
+                    <div class="about-bio" data-reveal>
+                        <!-- Greek (verbatim — do not alter) -->
+                        <div class="prose lang-el">
+                            <p class="has-dropcap">Ονομάζομαι Πάρης Βαρύτης και είμαι Διδάκτωρ Θεωρητικής Φυσικής, με ερευνητική και διδακτική εμπειρία στην Ελλάδα και τη Γερμανία.</p>
+                            <p>Πραγματοποίησα το διδακτορικό μου στο Humboldt University of Berlin και εργάστηκα ως ερευνητής στο Max Born Institute, συμμετέχοντας σε απαιτητικά ερευνητικά projects και δημοσιεύοντας επιστημονικές εργασίες σε διεθνή περιοδικά υψηλού κύρους.</p>
+                            <p>Παράλληλα με την ερευνητική μου πορεία, ασχολούμαι ενεργά με τη διδασκαλία και την προετοιμασία μαθητών και φοιτητών, με στόχο όχι μόνο την επιτυχία στις εξετάσεις αλλά κυρίως τη βαθιά κατανόηση της φυσικής και των μαθηματικών.</p>
+                            <p>Σήμερα διδάσκω στα Φροντιστήρια Άβακας στο Μαρούσι, καθώς και ιδιαιτέρως (online &amp; δια ζώσης), προσφέροντας σύγχρονα και εξατομικευμένα μαθήματα φυσικής και μαθηματικών για μαθητές Λυκείου και φοιτητές. Η φιλοσοφία μου βασίζεται στη μεθοδικότητα, στην αναλυτική σκέψη και στην προσωπική προσέγγιση κάθε μαθητή.</p>
+                            <p>Πιστεύω ότι κάθε μαθητής μπορεί να εξελιχθεί όταν αποκτήσει σωστή καθοδήγηση, δομημένη μελέτη και ουσιαστική κατανόηση των εννοιών. Γι' αυτό, κάθε μάθημα προσαρμόζεται στις ανάγκες, στους στόχους και στον τρόπο σκέψης του κάθε ανθρώπου ξεχωριστά.</p>
+                        </div>
+                        <!-- English -->
+                        <div class="prose lang-en">
+                            <p class="has-dropcap">I'm Paris Varytis, PhD in Theoretical Physics, with research and teaching experience in Greece and Germany. I completed my doctorate at the Humboldt University of Berlin and worked as a researcher at the Max Born Institute, contributing to demanding research projects and publishing in high-impact international journals.</p>
+                            <p>Alongside my research, I am actively dedicated to teaching and preparing students — at high school and university level — aiming not only at exam success but, above all, at a deep understanding of physics and mathematics.</p>
+                            <p>Today I teach at Abakas Tutoring Center in Maroussi, Athens, as well as privately (online &amp; in person), offering modern, personalized lessons. My approach is built on method, analytical thinking and a personal connection with every student.</p>
+                        </div>
+                    </div>
+
+                    <aside class="about-side" data-reveal>
+                        <div class="cv-card">
+                            <h3 class="cv-card-title">
+                                <span class="lang-el">Εκπαίδευση</span><span class="lang-en">Education</span>
+                            </h3>
+                            <ul class="cv-list">
+                                <li>
+                                    <span class="cv-when">2016–2019</span>
+                                    <span class="cv-what"><strong><span class="lang-el">Διδακτορικό, Θεωρητική Φυσική</span><span class="lang-en">PhD, Theoretical Physics</span></strong>
+                                    Humboldt University of Berlin</span>
+                                    <span class="cv-note"><span class="lang-el">Διατριβή:</span><span class="lang-en">Thesis:</span> <em>“Tailored Disordered and Anisotropic Scattering in Photonic Nanostructures”</em></span>
+                                </li>
+                                <li>
+                                    <span class="cv-when">2015</span>
+                                    <span class="cv-what"><strong><span class="lang-el">Μεταπτυχιακό, Φυσική Υλικών</span><span class="lang-en">MSc, Materials Physics</span></strong>
+                                    <span class="lang-el">Πανεπιστήμιο Αθηνών</span><span class="lang-en">University of Athens</span></span>
+                                </li>
+                                <li>
+                                    <span class="cv-when">2012</span>
+                                    <span class="cv-what"><strong><span class="lang-el">Πτυχίο Φυσικής</span><span class="lang-en">BSc, Physics</span></strong>
+                                    <span class="lang-el">Πανεπιστήμιο Αθηνών</span><span class="lang-en">University of Athens</span></span>
+                                </li>
+                            </ul>
+
+                            <h3 class="cv-card-title">
+                                <span class="lang-el">Έρευνα</span><span class="lang-en">Research</span>
+                            </h3>
+                            <ul class="cv-list">
+                                <li>
+                                    <span class="cv-when">2016–2019</span>
+                                    <span class="cv-what"><strong><span class="lang-el">Ερευνητής</span><span class="lang-en">Research Associate</span></strong>
+                                    Max Born Institute / Humboldt University, <span class="lang-el">Βερολίνο</span><span class="lang-en">Berlin</span></span>
+                                </li>
+                                <li>
+                                    <span class="cv-when">2015–2016</span>
+                                    <span class="cv-what"><strong><span class="lang-el">Ερευνητής</span><span class="lang-en">Research Associate</span></strong>
+                                    <span class="lang-el">Πανεπιστήμιο Αθηνών</span><span class="lang-en">University of Athens</span></span>
+                                </li>
+                            </ul>
+
+                            <div class="cv-meta">
+                                <p><span class="cv-meta-label"><span class="lang-el">Γλώσσες</span><span class="lang-en">Languages</span></span>
+                                <span class="lang-el">Ελληνικά (μητρική) · Αγγλικά (άριστα) · Γερμανικά (A2–B1)</span><span class="lang-en">Greek (native) · English (fluent) · German (A2–B1)</span></p>
+                                <p><span class="cv-meta-label"><span class="lang-el">Ενδιαφέροντα</span><span class="lang-en">Interests</span></span>
+                                <span class="lang-el">CrossFit · Μπάσκετ · Brazilian Jiu-Jitsu · Μουσική</span><span class="lang-en">CrossFit · Basketball · Brazilian Jiu-Jitsu · Music</span></p>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SERVICES / LESSONS ============ -->
+        <section id="services" class="section section-services" aria-labelledby="services-title">
+            <div class="container">
+                <header class="section-head" data-reveal>
+                    <span class="section-index">§ 02</span>
+                    <h2 id="services-title" class="section-title">
+                        <span class="lang-el">Διδασκαλία</span><span class="lang-en">Teaching</span>
+                    </h2>
+                    <span class="section-rule" aria-hidden="true"></span>
+                </header>
+
+                <div class="cards-3">
+                    <article class="service-card" data-reveal>
+                        <span class="service-icon" aria-hidden="true">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="2.2"/><ellipse cx="12" cy="12" rx="10" ry="4.3"/><ellipse cx="12" cy="12" rx="10" ry="4.3" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.3" transform="rotate(120 12 12)"/></svg>
+                        </span>
+                        <h3 class="service-name"><span class="lang-el">Φυσική</span><span class="lang-en">Physics</span></h3>
+                        <p class="service-desc">
+                            <span class="lang-el">Λύκειο &amp; Πανελλαδικές. Από τις βασικές αρχές μέχρι τα πιο απαιτητικά θέματα — με έμφαση στην κατανόηση του «γιατί», όχι μόνο του «πώς».</span><span class="lang-en">High school &amp; national exams. From first principles to the most demanding problems — with the emphasis on understanding the “why”, not just the “how”.</span>
+                        </p>
+                    </article>
+                    <article class="service-card" data-reveal>
+                        <span class="service-icon" aria-hidden="true">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 4h11l-6 8 6 8H5"/><path d="M5 4v0M16 12H9"/></svg>
+                        </span>
+                        <h3 class="service-name"><span class="lang-el">Μαθηματικά</span><span class="lang-en">Mathematics</span></h3>
+                        <p class="service-desc">
+                            <span class="lang-el">Λύκειο &amp; Πανελλαδικές. Δομημένη μέθοδος επίλυσης, καθαρή σκέψη και σταθερά θεμέλια στην άλγεβρα, την ανάλυση και τη γεωμετρία.</span><span class="lang-en">High school &amp; national exams. A structured problem-solving method, clear thinking and solid foundations in algebra, calculus and geometry.</span>
+                        </p>
+                    </article>
+                    <article class="service-card" data-reveal>
+                        <span class="service-icon" aria-hidden="true">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l9-4 9 4-9 4-9-4z"/><path d="M7 10v5c0 1.5 2.5 3 5 3s5-1.5 5-3v-5"/><path d="M21 8v5"/></svg>
+                        </span>
+                        <h3 class="service-name"><span class="lang-el">Πανεπιστημιακά</span><span class="lang-en">University-level</span></h3>
+                        <p class="service-desc">
+                            <span class="lang-el">Υποστήριξη φοιτητών σε μαθήματα φυσικής και μαθηματικών — λογισμός, μηχανική, ηλεκτρομαγνητισμός, κβαντική και υπολογιστικές μέθοδοι.</span><span class="lang-en">Support for undergraduates in physics and mathematics — calculus, mechanics, electromagnetism, quantum and computational methods.</span>
+                        </p>
+                    </article>
+                </div>
+
+                <div class="services-foot" data-reveal>
+                    <p class="services-formats">
+                        <span class="pill"><span class="lang-el">Online &amp; δια ζώσης</span><span class="lang-en">Online &amp; in person</span></span>
+                        <span class="services-audience">
+                            <span class="lang-el">Για μαθητές Λυκείου, υποψηφίους των Πανελλαδικών και φοιτητές.</span><span class="lang-en">For high-school students, national-exam candidates and university students.</span>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PHILOSOPHY ============ -->
+        <section id="philosophy" class="section section-philosophy" aria-labelledby="philosophy-title">
+            <div class="container philosophy-grid">
+                <div class="philosophy-text">
+                    <header class="section-head" data-reveal>
+                        <span class="section-index">§ 03</span>
+                        <h2 id="philosophy-title" class="section-title">
+                            <span class="lang-el">Κατανόηση, όχι αποστήθιση</span><span class="lang-en">Understanding, not memorization</span>
+                        </h2>
+                        <span class="section-rule" aria-hidden="true"></span>
+                    </header>
+                    <div class="prose" data-reveal>
+                        <p>
+                            <span class="lang-el">Πιστεύω πως η φυσική και τα μαθηματικά δεν είναι ένα σύνολο τύπων προς απομνημόνευση, αλλά ένας τρόπος σκέψης. Στόχος μου σε κάθε μάθημα είναι ο μαθητής να καταλαβαίνει σε βάθος τις έννοιες, να χτίζει μέθοδο και να αποκτά την αυτοπεποίθηση να αντιμετωπίζει νέα, άγνωστα προβλήματα.</span><span class="lang-en">I believe physics and mathematics are not a set of formulas to memorize, but a way of thinking. In every lesson my goal is for the student to understand the concepts deeply, build method, and gain the confidence to face new, unfamiliar problems.</span>
+                        </p>
+                    </div>
+                    <ul class="principle-list" data-reveal>
+                        <li><span class="lang-el"><strong>Πραγματική κατανόηση</strong> αντί για στείρα αποστήθιση</span><span class="lang-en"><strong>Real understanding</strong> instead of rote memorization</span></li>
+                        <li><span class="lang-el"><strong>Εξατομικευμένη</strong> προσέγγιση στον κάθε μαθητή</span><span class="lang-en">A <strong>personalized</strong> approach for every student</span></li>
+                        <li><span class="lang-el"><strong>Μέθοδος</strong> και δομημένη μελέτη</span><span class="lang-en"><strong>Method</strong> and structured study</span></li>
+                        <li><span class="lang-el">Καθαρή εξήγηση ακόμη και των πιο <strong>απαιτητικών εννοιών</strong></span><span class="lang-en">Clear explanation of even the most <strong>demanding concepts</strong></span></li>
+                        <li><span class="lang-el">Χτίσιμο <strong>αυτοπεποίθησης</strong> για τις εξετάσεις</span><span class="lang-en">Building <strong>confidence</strong> for the exams</span></li>
+                    </ul>
+                </div>
+                <figure class="philosophy-figure" data-reveal>
+                    <img src="imges/pro-lSxCds47.jpeg" width="586" height="780" loading="lazy" decoding="async"
+                         alt="Ο Πάρης Βαρύτης σε αίθουσα διδασκαλίας, ενώ μια μαθήτρια λύνει άσκηση στον πίνακα και άλλοι μαθητές κρατούν σημειώσεις.">
+                    <figcaption>
+                        <span class="lang-el">Στην τάξη — ενεργή συμμετοχή και λύση στον πίνακα.</span><span class="lang-en">In class — active participation and working at the board.</span>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- ============ CREDENTIALS ============ -->
+        <section id="credentials" class="section section-credentials" aria-labelledby="credentials-title">
+            <div class="container">
+                <header class="section-head" data-reveal>
+                    <span class="section-index">§ 04</span>
+                    <h2 id="credentials-title" class="section-title">
+                        <span class="lang-el">Ακαδημαϊκό υπόβαθρο</span><span class="lang-en">Academic background</span>
+                    </h2>
+                    <span class="section-rule" aria-hidden="true"></span>
+                </header>
+
+                <div class="stats-row" data-reveal>
+                    <div class="stat">
+                        <span class="stat-num">PhD</span>
+                        <span class="stat-label">Humboldt University of Berlin</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num">10</span>
+                        <span class="stat-label"><span class="lang-el">δημοσιεύσεις σε διεθνή περιοδικά</span><span class="lang-en">publications in international journals</span></span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num">~10</span>
+                        <span class="stat-label"><span class="lang-el">χρόνια διδακτικής εμπειρίας</span><span class="lang-en">years of teaching experience</span></span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num">MBI</span>
+                        <span class="stat-label"><span class="lang-el">Ερευνητής, Max Born Institute</span><span class="lang-en">Researcher, Max Born Institute</span></span>
+                    </div>
+                </div>
+
+                <p class="quotes-label" data-reveal>
+                    <span class="lang-el">Από τις αξιολογήσεις</span><span class="lang-en">From the reviews</span>
+                </p>
+                <div class="quotes" data-reveal>
+                    <figure class="quote">
+                        <blockquote>Mr. Varytis belongs to a rare class of researchers that can carry out a project all the way through… a broad arsenal of theoretical and computational approaches… ability to apply the developed theory to elucidating technological problems.</blockquote>
+                        <figcaption>— PhD Thesis Reviewer</figcaption>
+                    </figure>
+                    <figure class="quote">
+                        <blockquote>Mr. Varytis has worked highly independently within a very demanding field… and has displayed a significant breadth and depth of knowledge and skills. This combination has allowed him to derive very exciting results.</blockquote>
+                        <figcaption>— Prof. Dr. Kurt Busch, <span class="quote-role">PhD Supervisor</span></figcaption>
+                    </figure>
+                    <figure class="quote">
+                        <blockquote>Clear logic and organization of the solutions… You explained everything very well and made clear instructions.</blockquote>
+                        <figcaption>— M.Sc. Students' Review <span class="quote-role">(Humboldt)</span></figcaption>
+                    </figure>
+                </div>
+
+                <div class="tech-block" data-reveal>
+                    <div class="tech-head">
+                        <h3 class="tech-title"><span class="lang-el">Τεχνικό υπόβαθρο</span><span class="lang-en">Technical depth</span></h3>
+                        <p class="tech-note">
+                            <span class="lang-el">Ένα επιπλέον σημάδι βάθους — όχι υπηρεσία προς πώληση, αλλά η αναλυτική &amp; υπολογιστική σκέψη που περνά σε κάθε μάθημα.</span><span class="lang-en">An extra signal of depth — not a service for sale, but the analytical &amp; computational thinking that informs every lesson.</span>
+                        </p>
+                    </div>
+                    <ul class="tag-list">
+                        <li>Data Science</li><li>Machine Learning</li><li>Deep Learning</li>
+                        <li>Python</li><li>NumPy</li><li>Pandas</li><li>TensorFlow</li><li>Matplotlib</li>
+                        <li>Fortran</li><li>MATLAB</li><li>C++</li><li>SQL / PostgreSQL</li><li>Tableau</li>
+                    </ul>
+                    <p class="tech-certs">
+                        <span class="lang-el">Πιστοποιήσεις (2020): Data Science · Deep Learning · SQL · Tableau.</span><span class="lang-en">Certifications (2020): Data Science · Deep Learning · SQL · Tableau.</span>
+                    </p>
+                    <a href="Varytis-CVblack.pdf" download class="btn btn-secondary btn-sm">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        <span class="lang-el">Πλήρες βιογραφικό (PDF)</span><span class="lang-en">Full CV (PDF)</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ ABAKAS ============ -->
+        <section id="abakas" class="section section-abakas" aria-labelledby="abakas-title">
+            <div class="container abakas-grid">
+                <div class="abakas-text">
+                    <header class="section-head" data-reveal>
+                        <span class="section-index">§ 05</span>
+                        <h2 id="abakas-title" class="section-title">
+                            <span class="lang-el">Διδάσκω στα Φροντιστήρια Άβακας</span><span class="lang-en">I teach at Abakas Tutoring Center</span>
+                        </h2>
+                        <span class="section-rule" aria-hidden="true"></span>
+                    </header>
+                    <div class="prose" data-reveal>
+                        <p>
+                            <span class="lang-el">Εκτός από τα ιδιαίτερα μαθήματα, διδάσκω ως καθηγητής στα Φροντιστήρια Θετικών Επιστημών «Άβακας» στο Μαρούσι. Είναι ένα φροντιστήριο με μικρά τμήματα, οργανωμένη μελέτη και διαγωνίσματα προσομοίωσης — ένα περιβάλλον που στηρίζει ουσιαστικά τους μαθητές προς τις Πανελλαδικές.</span><span class="lang-en">Beyond private tuition, I teach as a tutor at the “Abakas” Science Tutoring Center in Maroussi. It runs small groups, supervised study and mock exams — an environment that genuinely supports students toward the national exams.</span>
+                        </p>
+                    </div>
+                    <div class="abakas-actions" data-reveal>
+                        <a href="https://abakasmarousi.gr" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                            <span class="lang-el">Επίσκεψη ιστότοπου</span><span class="lang-en">Visit website</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
+                        <a href="https://www.google.com/maps/search/?api=1&amp;query=%CE%95%CF%81%CE%BC%CE%BF%CF%8D%202%20%CE%9C%CE%B1%CF%81%CE%BF%CF%8D%CF%83%CE%B9%2015124" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="2.6"/></svg>
+                            <span class="lang-el">Άνοιγμα στους Χάρτες</span><span class="lang-en">Open in Maps</span>
+                        </a>
+                    </div>
+                </div>
+
+                <aside class="abakas-card" data-reveal>
+                    <p class="abakas-affil"><span class="lang-el">Συνεργασία — διδάσκων καθηγητής</span><span class="lang-en">Affiliation — teaching tutor</span></p>
+                    <h3 class="abakas-name">Φροντιστήρια Θετικών Επιστημών — Άβακας</h3>
+                    <dl class="abakas-dl">
+                        <div><dt><span class="lang-el">Διεύθυνση</span><span class="lang-en">Address</span></dt>
+                            <dd>Ερμού 2, 15124 Μαρούσι<br><span class="muted"><span class="lang-el">δίπλα στον σταθμό ΗΣΑΠ Μαρούσι</span><span class="lang-en">next to Maroussi ISAP station</span></span></dd></div>
+                        <div><dt><span class="lang-el">Τηλέφωνο</span><span class="lang-en">Phone</span></dt>
+                            <dd><a href="tel:+302108062190">21 0806 2190</a></dd></div>
+                        <div><dt>Instagram</dt>
+                            <dd><a href="https://instagram.com/avakas.official" target="_blank" rel="noopener noreferrer">@avakas.official</a></dd></div>
+                        <div><dt>Facebook</dt>
+                            <dd>Άβακας</dd></div>
+                    </dl>
+                </aside>
+            </div>
+        </section>
+
+        <!-- ============ CONTACT ============ -->
+        <section id="contact" class="section section-contact" aria-labelledby="contact-title">
+            <div class="container contact-grid">
+                <div class="contact-intro">
+                    <header class="section-head" data-reveal>
+                        <span class="section-index">§ 06</span>
+                        <h2 id="contact-title" class="section-title">
+                            <span class="lang-el">Επικοινωνία</span><span class="lang-en">Get in touch</span>
+                        </h2>
+                        <span class="section-rule" aria-hidden="true"></span>
+                    </header>
+                    <div class="prose" data-reveal>
+                        <p>
+                            <span class="lang-el">Έχεις μια ερώτηση ή θέλεις να συζητήσουμε για μαθήματα; Στείλε μου ένα μήνυμα και θα σου απαντήσω το συντομότερο δυνατό.</span><span class="lang-en">Have a question or want to talk about lessons? Send me a message and I'll get back to you as soon as I can.</span>
+                        </p>
+                    </div>
+
+                    <ul class="contact-direct" data-reveal>
+                        <li>
+                            <span class="cd-label"><span class="lang-el">Email</span><span class="lang-en">Email</span></span>
+                            <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>
+                        </li>
+                        <li>
+                            <span class="cd-label"><span class="lang-el">Τηλέφωνο</span><span class="lang-en">Phone</span></span>
+                            <a href="tel:{{PHONE}}">{{PHONE}}</a>
+                        </li>
+                        <li>
+                            <span class="cd-label"><span class="lang-el">Περιοχή</span><span class="lang-en">Area</span></span>
+                            <span><span class="lang-el">{{AREA}} · &amp; online πανελλαδικά</span><span class="lang-en">{{AREA}} · &amp; online everywhere</span></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <form class="contact-form" data-reveal data-email="{{EMAIL}}" novalidate>
+                    <div class="field">
+                        <label for="cf-name"><span class="lang-el">Ονοματεπώνυμο</span><span class="lang-en">Full name</span></label>
+                        <input type="text" id="cf-name" name="name" required autocomplete="name"
+                               data-ph-el="π.χ. Μαρία Παπαδοπούλου" data-ph-en="e.g. Maria Papadopoulou" placeholder="π.χ. Μαρία Παπαδοπούλου">
+                    </div>
+                    <div class="field">
+                        <label for="cf-email"><span class="lang-el">Το email σου</span><span class="lang-en">Your email</span></label>
+                        <input type="email" id="cf-email" name="email" required autocomplete="email"
+                               data-ph-el="name@email.com" data-ph-en="name@email.com" placeholder="name@email.com">
+                    </div>
+                    <div class="field">
+                        <label for="cf-message"><span class="lang-el">Μήνυμα</span><span class="lang-en">Message</span></label>
+                        <textarea id="cf-message" name="message" rows="4"
+                                  data-ph-el="Το μήνυμά σου…" data-ph-en="Your message…" placeholder="Το μήνυμά σου…"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <span class="lang-el">Αποστολή μηνύματος</span><span class="lang-en">Send message</span>
+                    </button>
+                    <p class="form-hint">
+                        <span class="lang-el">Με την αποστολή ανοίγει η εφαρμογή email σας με το μήνυμα έτοιμο.</span><span class="lang-en">Submitting opens your email app with the message ready to send.</span>
+                    </p>
+                </form>
+            </div>
+
+            <figure class="proof-strip container" data-reveal>
+                <img src="imges/pro-Wlp2jafN.webp" width="1080" height="1920" loading="lazy" decoding="async"
+                     alt="Ο Πάρης Βαρύτης με δύο μαθητές του, χαμογελαστοί έξω από καφετέρια.">
+                <figcaption>
+                    <span class="lang-el">Με μαθητές μου.</span><span class="lang-en">With some of my students.</span>
+                </figcaption>
+            </figure>
+        </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <span class="brand-mark" aria-hidden="true">PV</span>
+                <div>
+                    <p class="footer-name"><span class="lang-el">Πάρης Βαρύτης</span><span class="lang-en">Paris Varytis</span></p>
+                    <p class="footer-sub"><span class="lang-el">Διδάκτωρ Θεωρητικής Φυσικής</span><span class="lang-en">PhD in Theoretical Physics</span></p>
+                </div>
+            </div>
+
+            <p class="footer-tagline">
+                <span class="lang-el">«Φυσική &amp; Μαθηματικά με βάθος και μέθοδο.»</span><span class="lang-en">“Physics &amp; Mathematics, taught with depth and method.”</span>
+            </p>
+
+            <nav class="footer-nav" aria-label="Footer">
+                <a href="#about"><span class="lang-el">Σχετικά</span><span class="lang-en">About</span></a>
+                <a href="#services"><span class="lang-el">Διδασκαλία</span><span class="lang-en">Teaching</span></a>
+                <a href="#credentials"><span class="lang-el">Προσόντα</span><span class="lang-en">Credentials</span></a>
+                <a href="#contact"><span class="lang-el">Επικοινωνία</span><span class="lang-en">Contact</span></a>
+                <button class="lang-toggle lang-toggle-foot" type="button" aria-label="Αλλαγή γλώσσας / Change language">
+                    <span class="lang-el">English</span><span class="lang-en">Ελληνικά</span>
+                </button>
+            </nav>
+        </div>
+        <div class="container footer-base">
+            <p>© <span id="year"></span> <span class="lang-el">Πάρης Βαρύτης. Με επιφύλαξη παντός δικαιώματος.</span><span class="lang-en">Paris Varytis. All rights reserved.</span></p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
