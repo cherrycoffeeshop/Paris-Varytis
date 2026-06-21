@@ -901,6 +901,36 @@ html[data-lang="en"] .lang-el { display: none; }
     .ticker { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
 }
 
+/* Static student review cards (current layout; replaced the scrolling ticker) */
+.reviews {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--sp-5);
+    align-items: start;
+}
+.review {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 var(--r-md) var(--r-md) 0;
+    padding: var(--sp-5);
+    box-shadow: var(--sh-sm);
+}
+.review blockquote {
+    margin: 0 0 var(--sp-4);
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--ink);
+}
+.review figcaption {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+}
+@media (max-width: 720px) { .reviews { grid-template-columns: 1fr; } }
+
 /* ============================================================
    FOOTER
    ============================================================ */

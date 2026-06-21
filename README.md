@@ -59,7 +59,7 @@ No installation, bundling or npm is required.
 4. Wait ~1 minute; the site goes live at `https://<user>.github.io/<repo>/`.
 
 All paths are **relative**, so it works at the repo root with no base-path changes. To use a custom
-domain, add it under Settings → Pages (a `CNAME` file is created for you — none is included here).
+domain, add it under Settings → Pages. A `CNAME` file with `varytisparis.com` is included in the repo root.
 
 ---
 
