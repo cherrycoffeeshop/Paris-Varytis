@@ -31,7 +31,7 @@ grep -rn "{{" index.html
 
 > The **Abakas** details (address, phone `21 0806 2190`, `@avakas.official`, `abakasmarousi.gr`) are
 > the tutoring center's real public info and are intentionally hard-coded — they are **not**
-> placeholders. Paris is framed throughout as a **teaching tutor at Abakas, not its owner**.
+> placeholders. Paris is framed as a **shareholder (μέτοχος) and teacher at Abakas**.
 
 ---
 
