@@ -909,6 +909,8 @@ html[data-lang="en"] .lang-el { display: none; }
     align-items: start;
 }
 .review {
+    display: flex;
+    flex-direction: column;
     background: var(--surface);
     border: 1px solid var(--rule);
     border-left: 3px solid var(--accent);
@@ -918,11 +920,17 @@ html[data-lang="en"] .lang-el { display: none; }
 }
 .review blockquote {
     margin: 0 0 var(--sp-4);
+    height: 15rem;              /* all cards equal — sized to the shortest review; tune this one value */
+    overflow-y: auto;           /* longer reviews scroll inside the card */
+    padding-right: 0.7rem;
     font-family: var(--font-display);
     font-size: 1.05rem;
     line-height: 1.6;
     color: var(--ink);
+    scrollbar-width: thin;
 }
+.review blockquote::-webkit-scrollbar { width: 6px; }
+.review blockquote::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 3px; }
 .review figcaption {
     font-family: var(--font-mono);
     font-size: 0.78rem;
