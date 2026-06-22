@@ -5,7 +5,7 @@ Theoretical Physics**. Built with **vanilla HTML + CSS + JavaScript** — no fra
 no dependencies (other than Google Fonts loaded via `<link>`). It opens by double-clicking
 `index.html` and is ready to deploy on **GitHub Pages from the repository root**.
 
----
+--- 
 
 ## ⚠️ Before launch — fill in these placeholders
 
